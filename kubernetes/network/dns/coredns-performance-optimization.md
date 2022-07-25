@@ -8,7 +8,7 @@ search default.svc.cluster.local svc.cluster.local cluster.local
 nameserver 10.254.0.10
 options ndots:5
 ```
-Kubernetes Pod 解析 DNS 域名会 search 很多次，例如上图 Pod 的 DNS 配置，当它请求 www.baidu.com，会依次解析：
+Kubernetes Pod 解析 DNS 域名会 search 很多次，例如上图 Pod 的 DNS 配置，当它请求 www.baidu.com， 会依次解析：
 - www.baidu.com.default.svc.cluster.local -> NXDOMAIN
 - www.baidu.com.svc.cluster.local -> NXDOMAIN
 - www.baidu.com.cluster.local -> NXDOMAIN
