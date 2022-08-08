@@ -59,7 +59,7 @@ my-service    ClusterIP   10.96.105.215   <none>        80/TCP     14s
 $ kubectl get endpoint
 NAME          ENDPOINTS                                           AGE
 ```
-可以确实没有自动生成`endpoint`资源。
+可以看到确实没有自动生成`endpoint`资源。
 
 ## 源码分析
 自动创建`endpoint`资源的业务逻辑肯定是放在`kube-controller-manager`组件中，
