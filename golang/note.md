@@ -1,5 +1,25 @@
 ## Golang 随身笔记本
-### 1.Golang 数据类型比较问题？
+
+### 1、Golang变量类型说明
+基本变量类型：
+```shell
+bool
+
+string
+
+int   int8  int16   int32   int64
+uint  uint8 uint16  uint32  uint64 uintptr
+
+byte // alias for uint8
+
+rune // alias for int32. represents a Unicode code point
+
+float32 float64
+
+complex64 complex128
+```
+
+### 2.Golang 数据类型比较问题？
 先梳理下 Golang 中哪些数据类型可以比较，哪些数据类型不可比较:
 - 可比较：Integer，Float，String，Boolean，Complex，Pointer，Channel，Interface，Array
 - 不可比较：Slice，Map，Function
