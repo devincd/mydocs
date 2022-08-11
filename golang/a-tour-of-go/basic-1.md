@@ -22,16 +22,16 @@ func main() {
 > `Naked` return statements should be used only in short functions, as with the example shown here.
 > They can harm readability in longer functions.
 
-### Go语言中 defer 和 return 执行顺序解析
-首先要明白，return 是非原子性的，需要两步，首先要将返回值放到一个临时变量中（为返回值赋值），然后将返回值返回到被调用处。
-而 defer 函数恰在 return 这两个操作之间执行。
+### Go语言中defer和return执行顺序解析
+首先要明白`return`是非原子性的，需要两步，首先要将返回值放到一个临时变量中（为返回值赋值），然后将返回值返回到被调用处。
+而`defer`函数恰在`return`这两个操作之间执行。
 
 真正的执行顺序是：
 
-先为返回值赋值，即将返回值放到一个临时变量中，然后执行 defer，然后 return 到函数被调用处。
+先为返回值赋值，即将返回值放到一个临时变量中，然后执行`defer`，然后`return`到函数被调用处。
 
-如果所在函数为命名返回值函数，return 第一步，返回值就是命名返回值变量，如果恰好 defer 函数中修改了该返回值，那么最终返回值是更新后的。
-但是如果所在函数为无名返回值函数，那么 return 第一步先把返回值放到一个临时变量中，defer 函数无法获取到这个临时变量地址，所以无论 defer 函数做任何操作，
+如果所在函数为命名返回值函数，`return`第一步，返回值就是命名返回值变量，如果恰好`defer`函数中修改了该返回值，那么最终返回值是更新后的。
+但是如果所在函数为无名返回值函数，那么`return`第一步先把返回值放到一个临时变量中，`defer`函数无法获取到这个临时变量地址，所以无论`defer`函数做任何操作，
 都不会对最终返回值造成任何变动。
 
 #### 例子：
