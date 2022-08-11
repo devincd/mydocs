@@ -30,7 +30,7 @@ func main() {
 
 先为返回值赋值，即将返回值放到一个临时变量中，然后执行`defer`，然后`return`到函数被调用处。
 
-如果所在函数为命名返回值函数，`return`第一步，返回值就是命名返回值变量，如果恰好`defer`函数中修改了该返回值，那么最终返回值是更新后的。
+如果所在函数为命名返回值函数，`return`第一步，返回值就是命名返回值变量，如果恰好`defer`函数中修改了该命名返回值变量，那么最终返回值是更新后的。
 但是如果所在函数为无名返回值函数，那么`return`第一步先把返回值放到一个临时变量中，`defer`函数无法获取到这个临时变量地址，所以无论`defer`函数做任何操作，
 都不会对最终返回值造成任何变动。
 
@@ -70,7 +70,7 @@ return:  0
 ```
 
 结果分析：
-实际上 return 执行了两步操作。因为返回值没有命名，所以 return 之前首先默认创建了一个临时零值变量（假设为 s）作为返回值，
+实际上`return`执行了两步操作。因为返回值没有命名，所以`return`之前首先默认创建了一个临时零值变量（假设为 s）作为返回值，
 然后将 i 赋值给 s，此时 s 的值为0， 后续的操作是针对 i 进行的，所以不会影响 s。
 
 相当于以下流程：
@@ -132,10 +132,10 @@ func main() {
 	fmt.Println("Go rules?", Truth)
 }
 
-// Constants are declared like variables, but with the const keyword.
-
-// Constants can be character, string, boolean, or numeric values.
-
-// Constants cannot be declared using the := syntax.
-
+/*
+常量声明说明：
+- Constants are declared like variables, but with the const keyword.
+- Constants can be character, string, boolean, or numeric values.
+- Constants cannot be declared using the := syntax.
+ */
 ```
