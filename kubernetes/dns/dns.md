@@ -23,7 +23,7 @@ options ndots:5
 
 
 DNS 解析原理示例图
-![dns-theory.png](./images/dns-theory.png)
+![dns-theory.png](images/dns-theory.png)
 
 | 序号  | 描述                                                                                                                                                                |
 |-----|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -46,7 +46,7 @@ DNS 解析原理示例图
 ## DNS 最佳实践和解析异常问题排查
 - https://help.aliyun.com/document_detail/172339.html
 - https://help.aliyun.com/document_detail/404754.html
-- 
+
 ## 参考文献
 1.https://support.huaweicloud.com/intl/zh-cn/dns/index.html
 2.https://intl.cloud.tencent.com/zh/document/product/457/39125
