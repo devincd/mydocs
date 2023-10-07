@@ -34,7 +34,7 @@ type ConcreteHandlerOne struct {
   Handler
 }
 func (c *ConcreteHandlerOne) Handle(score int) {
-  if score < 0 {
+  if score > 1 {
     fmt.Println("ConcreteHandlerOne 处理")
     return
   }
@@ -48,7 +48,7 @@ type ConcreteHandlerTwo struct {
   Handler
 }
 func (c *ConcreteHandlerTwo) Handle(score int) {
-  if score < 0 {
+  if score > 2 {
     fmt.Println("ConcreteHandlerTwo 处理")
     return
   }
@@ -62,7 +62,7 @@ type ConcreteHandlerThree struct {
   Handler
 }
 func (c *ConcreteHandlerThree) Handle(score int) {
-  if score < 0 {
+  if score > 3 {
     fmt.Println("ConcreteHandlerThree 处理")
     return
   }
